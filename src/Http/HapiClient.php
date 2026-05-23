@@ -2,6 +2,7 @@
 namespace HapiClient\Http;
 
 use GuzzleHttp\UriTemplate\UriTemplate;
+use GuzzleHttp\Psr7\Utils;
 use HapiClient\Http\Auth\AuthenticationMethod;
 use HapiClient\Hal\ResourceInterface;
 use HapiClient\Hal\Resource;
@@ -241,7 +242,7 @@ final class HapiClient implements HapiClientInterface
             $request->getMethod(),
             $url,
             array_merge($headers, $headersToAdd),
-            $body ? \GuzzleHttp\Psr7\stream_for($body) : null
+            $body ? Utils::streamFor($body) : null
         );
 
         return $httpRequest;

@@ -2,7 +2,6 @@
 namespace HapiClient\Http\Auth;
 
 use HapiClient\Http;
-use GuzzleHttp\Message\RequestInterface;
 
 interface AuthenticationMethod
 {
